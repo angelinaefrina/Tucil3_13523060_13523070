@@ -6,8 +6,9 @@ public class State implements Comparable<State> {
     private final int heuristic;        // h(n): estimated cost to goal
     private final State parent;         // path reconstruction
     private int cols;
+    private int rows;
 
-    public State(List<Piece> pieces, int cost, int heuristic, State parent, int cols) {
+    public State(List<Piece> pieces, int cost, int heuristic, State parent, int cols, int rows) {
         this.pieces = new ArrayList<>();
         for (Piece p : pieces) {
             this.pieces.add(new Piece(p.getId(), p.getRow(), p.getCol(), p.getLength(), p.isHorizontal()));
@@ -16,6 +17,8 @@ public class State implements Comparable<State> {
         this.heuristic = heuristic;
         this.parent = parent;
         this.cols = cols;
+        this.rows = rows;
+
     }
 
     public List<Piece> getPieces() { return pieces; }
@@ -24,11 +27,27 @@ public class State implements Comparable<State> {
     public int getTotalCost() { return cost + heuristic; }
     public State getParent() { return parent; }
     public int getCols() { return cols; }
+    public int getRows() { return rows; }
 
     public boolean isGoal() {
-        Piece primary = pieces.get(0); // Assume first is primary
-        int endCol = primary.getCol() + primary.getLength() - 1;
-        return endCol == cols - 1;
+        Piece primary = pieces.get(0);
+        
+        if (Reader.hasRightExit()) {
+            int endCol = primary.getCol() + primary.getLength() - 1;
+            return endCol == cols - 1 && primary.getRow() == Reader.getExitRow();
+        } 
+        else if (Reader.hasLeftExit()) {
+            return primary.getCol() == 0 && primary.getRow() == Reader.getExitRow();
+        }
+        else if (Reader.hasTopExit()) {
+            return primary.getRow() == 0 && primary.getCol() == Reader.getExitCol();
+        }
+        else if (Reader.hasBottomExit()) {
+            int endRow = primary.getRow() + (primary.isHorizontal() ? 0 : primary.getLength() - 1);
+            return endRow == this.rows - 1 && primary.getCol() == Reader.getExitCol();
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -117,7 +136,7 @@ public class State implements Comparable<State> {
                         }
                     }
 
-                    State next = new State(newPieces, this.cost + 1, 0, this, this.cols);
+                    State next = new State(newPieces, this.cost + 1, 0, this, this.cols, this.rows);
                     nextStates.add(next);
                 }
             }

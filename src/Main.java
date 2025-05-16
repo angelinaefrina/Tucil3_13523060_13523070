@@ -46,7 +46,7 @@ public class Main {
 
         // Output
         
-        // System.out.println("Banyak gerakan yang diperiksa: " + nodes +"\n");
+        System.out.println("Banyak gerakan yang diperiksa: " + Algorithm.getNodesVisited() +"\n");
         System.out.println("Waktu pencarian: " + (endTime - startTime) + " ms\n");
 
         scanner.close();

@@ -1,6 +1,11 @@
 import java.util.*;
 
 public class Algorithm {
+    private static int nodesVisited = 0;
+
+    public static int getNodesVisited() {
+        return nodesVisited;
+    }
 
     public static State greedy(State initial, int rows, int cols) {
         PriorityQueue<State> queue = new PriorityQueue<>(Comparator.comparingInt(Algorithm::heuristic));
@@ -12,6 +17,7 @@ public class Algorithm {
             State current = queue.poll();
             if (visited.contains(current.toString())) continue;
             visited.add(current.toString());
+            nodesVisited++;
 
             if (current.isGoal()) {
                 return current;
@@ -37,6 +43,7 @@ public class Algorithm {
             State current = queue.poll();
             if (visited.contains(current.toString())) continue;
             visited.add(current.toString());
+            nodesVisited++;
 
             if (current.isGoal()) {
                 return current;
@@ -49,7 +56,7 @@ public class Algorithm {
             }
         }
 
-        return null; // No solution found
+        return null;
     }
 
     public static State aStar(State initial, int rows, int cols) {
@@ -62,6 +69,7 @@ public class Algorithm {
             State current = queue.poll();
             if (visited.contains(current.toString())) continue;
             visited.add(current.toString());
+            nodesVisited++;
 
             if (current.isGoal()) {
                 return current;
@@ -74,13 +82,39 @@ public class Algorithm {
             }
         }
 
-        return null; // No solution found
+        return null;
     }
 
     // Heuristic function
     private static int heuristic(State state) {
         Piece primary = state.getPieces().get(0);
-        int endCol = primary.getCol() + primary.getLength() - 1;
-        return state.getCols() - 1 - endCol;
+        
+        // Right exit
+        if (Reader.hasRightExit()) {
+            int endCol = primary.getCol() + primary.getLength() - 1;
+            int rowDistance = Math.abs(primary.getRow() - Reader.getExitRow());
+            int colDistance = (state.getCols() - 1) - endCol;
+            return rowDistance + colDistance;
+        } 
+        // Left exit
+        else if (Reader.hasLeftExit()) {
+            int rowDistance = Math.abs(primary.getRow() - Reader.getExitRow());
+            int colDistance = primary.getCol();
+            return rowDistance + colDistance;
+        }
+        // Top exit
+        else if (Reader.hasTopExit()) {
+            int rowDistance = primary.getRow();
+            int colDistance = Math.abs(primary.getCol() - Reader.getExitCol());
+            return rowDistance + colDistance;
+        }
+        // Bottom exit
+        else if (Reader.hasBottomExit()) {
+            int endRow = primary.getRow() + (primary.isHorizontal() ? 0 : primary.getLength() - 1);
+            int rowDistance = (state.getRows() - 1) - endRow;
+            int colDistance = Math.abs(primary.getCol() - Reader.getExitCol());
+            return rowDistance + colDistance;
+        }
+        return 0;
     }
 }
