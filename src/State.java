@@ -183,9 +183,65 @@ public class State implements Comparable<State> {
             }
         }
 
+        int exitLocation = 0;
+        if (Reader.hasTopExit() || Reader.hasBottomExit()) {
+            exitLocation = Reader.getExitCol();
+        } else if (Reader.hasLeftExit() || Reader.hasRightExit()) {
+            exitLocation = Reader.getExitRow();
+        }
+
         StringBuilder sb = new StringBuilder();
-        for (char[] row : grid) {
-            sb.append(new String(row)).append("\n");
+        int exitCounter = 0;
+        boolean exitFound = false;
+        if (Reader.hasBottomExit()) {
+            for (char[] row : grid) {
+                sb.append(new String(row)).append("\n");
+            }
+            for (int i = 0; i < cols; i++) {
+                if (i == exitLocation) {
+                    sb.append("K");
+                } else {
+                    sb.append(" ");
+                }
+            }
+            sb.append("\n");
+        }
+        if (Reader.hasTopExit()) {
+            for (int i = 0; i < cols; i++) {
+                if (i == exitLocation) {
+                    sb.append("K");
+                } else {
+                    sb.append(" ");
+                }
+            }
+            sb.append("\n");
+            for (char[] row : grid) {
+                sb.append(new String(row)).append("\n");
+            }
+        }
+        if (Reader.hasLeftExit()) {
+            for (char[] row : grid) {
+                if (exitLocation == exitCounter && !exitFound) {
+                    sb.append("K");
+                    exitFound = true;
+                } else {
+                    sb.append(" ");
+                    exitCounter++;
+                }
+                sb.append(new String(row)).append("\n");
+            }
+        }
+        if (Reader.hasRightExit()) {
+            for (char[] row : grid) {
+                sb.append(new String(row));
+                if (exitLocation == exitCounter && !exitFound) {
+                    sb.append("K").append("\n");
+                    exitFound = true;
+                } else {
+                    exitCounter++;
+                    sb.append("\n");
+                }
+            }
         }
         return sb.toString();
     }

@@ -89,7 +89,7 @@ public class Reader {
             return pieces.size() == pieceCount;
         } catch (Exception e) {
             System.out.println("Exception occurred: " + e.getMessage());
-            e.printStackTrace();
+            // e.printStackTrace(); // Error Debug
             return false;
         }
     }
