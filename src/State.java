@@ -180,6 +180,26 @@ public class State implements Comparable<State> {
     public String getBoard(int rows, int cols) {
         char[][] grid = new char[rows][cols];
         for (char[] row : grid) Arrays.fill(row, '.');
+        // COLORING
+        final String RED = "\u001B[31m";      // For primary piece (P)
+        final String GREEN = "\u001B[32m";    // For exit (K)
+        final String YELLOW = "\u001B[33m";   // For moved piece
+        final String RESET = "\u001B[0m";     // Reset color
+
+        char movedPiece = ' ';
+        if (parent != null) {
+            // Compare this state with parent to find which piece moved
+            for (int i = 0; i < pieces.size(); i++) {
+                Piece currentPiece = pieces.get(i);
+                Piece parentPiece = parent.getPieces().get(i);
+                
+                if (currentPiece.getRow() != parentPiece.getRow() || 
+                    currentPiece.getCol() != parentPiece.getCol()) {
+                    movedPiece = currentPiece.getId();
+                    break;
+                }
+            }
+        }
 
         for (Piece p : pieces) {
             int r = p.getRow(), c = p.getCol();
@@ -197,58 +217,101 @@ public class State implements Comparable<State> {
         }
 
         StringBuilder sb = new StringBuilder();
-        int exitCounter = 0;
-        boolean exitFound = false;
         if (Reader.hasBottomExit()) {
-            for (char[] row : grid) {
-                sb.append(new String(row)).append("\n");
+            // Print board
+            for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < cols; c++) {
+                    char cell = grid[r][c];
+                    if (cell == 'P') {
+                        sb.append(RED).append(cell).append(RESET);
+                    } else if (cell == movedPiece && movedPiece != 'P') {
+                        sb.append(YELLOW).append(cell).append(RESET);
+                    } else {
+                        sb.append(cell);
+                    }
+                }
+                sb.append("\n");
             }
+            
+            // Print bottom exit
             for (int i = 0; i < cols; i++) {
                 if (i == exitLocation) {
-                    sb.append("K");
+                    sb.append(GREEN).append("K").append(RESET);
                 } else {
                     sb.append(" ");
                 }
             }
             sb.append("\n");
         }
-        if (Reader.hasTopExit()) {
+        else if (Reader.hasTopExit()) {
+            // Print top exit
             for (int i = 0; i < cols; i++) {
                 if (i == exitLocation) {
-                    sb.append("K");
+                    sb.append(GREEN).append("K").append(RESET);
                 } else {
                     sb.append(" ");
                 }
             }
             sb.append("\n");
-            for (char[] row : grid) {
-                sb.append(new String(row)).append("\n");
+            
+            // Print board
+            for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < cols; c++) {
+                    char cell = grid[r][c];
+                    if (cell == 'P') {
+                        sb.append(RED).append(cell).append(RESET);
+                    } else if (cell == movedPiece && movedPiece != 'P') {
+                        sb.append(YELLOW).append(cell).append(RESET);
+                    } else {
+                        sb.append(cell);
+                    }
+                }
+                sb.append("\n");
             }
         }
-        if (Reader.hasLeftExit()) {
-            for (char[] row : grid) {
-                if (exitLocation == exitCounter && !exitFound) {
-                    sb.append("K");
-                    exitFound = true;
+        else if (Reader.hasLeftExit()) {
+            // Print board with left exit
+            for (int r = 0; r < rows; r++) {
+                if (r == exitLocation) {
+                    sb.append(GREEN).append("K").append(RESET);
                 } else {
                     sb.append(" ");
-                    exitCounter++;
                 }
-                sb.append(new String(row)).append("\n");
+                
+                for (int c = 0; c < cols; c++) {
+                    char cell = grid[r][c];
+                    if (cell == 'P') {
+                        sb.append(RED).append(cell).append(RESET);
+                    } else if (cell == movedPiece && movedPiece != 'P') {
+                        sb.append(YELLOW).append(cell).append(RESET);
+                    } else {
+                        sb.append(cell);
+                    }
+                }
+                sb.append("\n");
             }
         }
-        if (Reader.hasRightExit()) {
-            for (char[] row : grid) {
-                sb.append(new String(row));
-                if (exitLocation == exitCounter && !exitFound) {
-                    sb.append("K").append("\n");
-                    exitFound = true;
-                } else {
-                    exitCounter++;
-                    sb.append("\n");
+        else if (Reader.hasRightExit()) {
+            // Print board with right exit
+            for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < cols; c++) {
+                    char cell = grid[r][c];
+                    if (cell == 'P') {
+                        sb.append(RED).append(cell).append(RESET);
+                    } else if (cell == movedPiece && movedPiece != 'P') {
+                        sb.append(YELLOW).append(cell).append(RESET);
+                    } else {
+                        sb.append(cell);
+                    }
                 }
+                
+                if (r == exitLocation) {
+                    sb.append(GREEN).append("K").append(RESET);
+                }
+                sb.append("\n");
             }
         }
+        
         return sb.toString();
     }
 }
