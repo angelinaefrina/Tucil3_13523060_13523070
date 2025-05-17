@@ -177,29 +177,56 @@ public class State implements Comparable<State> {
         return sb.toString();
     }
 
-    public String getBoard(int rows, int cols) {
-        char[][] grid = new char[rows][cols];
-        for (char[] row : grid) Arrays.fill(row, '.');
-        // COLORING
-        final String RED = "\u001B[31m";      // For primary piece (P)
-        final String GREEN = "\u001B[32m";    // For exit (K)
-        final String YELLOW = "\u001B[33m";   // For moved piece
-        final String RESET = "\u001B[0m";     // Reset color
-
-        char movedPiece = ' ';
+    public char getMovedPiece() {
         if (parent != null) {
-            // Compare this state with parent to find which piece moved
             for (int i = 0; i < pieces.size(); i++) {
                 Piece currentPiece = pieces.get(i);
                 Piece parentPiece = parent.getPieces().get(i);
                 
                 if (currentPiece.getRow() != parentPiece.getRow() || 
                     currentPiece.getCol() != parentPiece.getCol()) {
-                    movedPiece = currentPiece.getId();
-                    break;
+                    return currentPiece.getId();
                 }
             }
         }
+        return ' ';
+    }
+
+    public String getMovedPieceDirection() {
+        String moveDirection = "";
+        if (parent != null) {
+            for (int i = 0; i < pieces.size(); i++) {
+                Piece currentPiece = pieces.get(i);
+                Piece parentPiece = parent.getPieces().get(i);
+                
+                if (currentPiece.getRow() != parentPiece.getRow() || 
+                    currentPiece.getCol() != parentPiece.getCol()) {
+                    // Menentukan arah gerakan piece
+                    if (currentPiece.isHorizontal()) {
+                        if (currentPiece.getCol() > parentPiece.getCol()) {
+                            moveDirection = "kanan";
+                        } else {
+                            moveDirection = "kiri";
+                        }
+                    } else {
+                        if (currentPiece.getRow() > parentPiece.getRow()) {
+                            moveDirection = "bawah";
+                        } else {
+                            moveDirection = "atas";
+                        }
+                    }           
+                }
+            }
+        }
+        return moveDirection;
+    }
+
+    public String getBoard(int rows, int cols) {
+        char[][] grid = new char[rows][cols];
+        for (char[] row : grid) Arrays.fill(row, '.');
+
+        char movedPiece = getMovedPiece();
+        final String BG_YELLOW = "\u001B[43m";
 
         for (Piece p : pieces) {
             int r = p.getRow(), c = p.getCol();
@@ -222,12 +249,10 @@ public class State implements Comparable<State> {
             for (int r = 0; r < rows; r++) {
                 for (int c = 0; c < cols; c++) {
                     char cell = grid[r][c];
-                    if (cell == 'P') {
-                        sb.append(RED).append(cell).append(RESET);
-                    } else if (cell == movedPiece && movedPiece != 'P') {
-                        sb.append(YELLOW).append(cell).append(RESET);
+                    if (cell == movedPiece) { // highlight piece yang gerak
+                        sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     } else {
-                        sb.append(cell);
+                        sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
                 }
                 sb.append("\n");
@@ -236,7 +261,7 @@ public class State implements Comparable<State> {
             // Print bottom exit
             for (int i = 0; i < cols; i++) {
                 if (i == exitLocation) {
-                    sb.append(GREEN).append("K").append(RESET);
+                    sb.append(getWarnaPiece('K')).append("K").append(WARNA_DEFAULT);
                 } else {
                     sb.append(" ");
                 }
@@ -247,7 +272,7 @@ public class State implements Comparable<State> {
             // Print top exit
             for (int i = 0; i < cols; i++) {
                 if (i == exitLocation) {
-                    sb.append(GREEN).append("K").append(RESET);
+                    sb.append(getWarnaPiece('K')).append("K").append(WARNA_DEFAULT);
                 } else {
                     sb.append(" ");
                 }
@@ -258,12 +283,10 @@ public class State implements Comparable<State> {
             for (int r = 0; r < rows; r++) {
                 for (int c = 0; c < cols; c++) {
                     char cell = grid[r][c];
-                    if (cell == 'P') {
-                        sb.append(RED).append(cell).append(RESET);
-                    } else if (cell == movedPiece && movedPiece != 'P') {
-                        sb.append(YELLOW).append(cell).append(RESET);
+                    if (cell == movedPiece) { // highlight piece yang gerak
+                        sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     } else {
-                        sb.append(cell);
+                        sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
                 }
                 sb.append("\n");
@@ -273,19 +296,17 @@ public class State implements Comparable<State> {
             // Print board with left exit
             for (int r = 0; r < rows; r++) {
                 if (r == exitLocation) {
-                    sb.append(GREEN).append("K").append(RESET);
+                    sb.append(getWarnaPiece('K')).append("K").append(WARNA_DEFAULT);
                 } else {
                     sb.append(" ");
                 }
                 
                 for (int c = 0; c < cols; c++) {
                     char cell = grid[r][c];
-                    if (cell == 'P') {
-                        sb.append(RED).append(cell).append(RESET);
-                    } else if (cell == movedPiece && movedPiece != 'P') {
-                        sb.append(YELLOW).append(cell).append(RESET);
+                    if (cell == movedPiece) { // highlight piece yang gerak
+                        sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     } else {
-                        sb.append(cell);
+                        sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
                 }
                 sb.append("\n");
@@ -296,17 +317,15 @@ public class State implements Comparable<State> {
             for (int r = 0; r < rows; r++) {
                 for (int c = 0; c < cols; c++) {
                     char cell = grid[r][c];
-                    if (cell == 'P') {
-                        sb.append(RED).append(cell).append(RESET);
-                    } else if (cell == movedPiece && movedPiece != 'P') {
-                        sb.append(YELLOW).append(cell).append(RESET);
+                    if (cell == movedPiece) { // highlight piece yang gerak
+                        sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     } else {
-                        sb.append(cell);
+                        sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
                 }
                 
                 if (r == exitLocation) {
-                    sb.append(GREEN).append("K").append(RESET);
+                    sb.append(getWarnaPiece('K')).append("K").append(WARNA_DEFAULT);
                 }
                 sb.append("\n");
             }
@@ -314,4 +333,43 @@ public class State implements Comparable<State> {
         
         return sb.toString();
     }
+
+    public static String getWarnaPiece(char pieceID) {
+        if (pieceID == ' ') {
+            return WARNA_DEFAULT;
+        }
+        int indeks = pieceID - 'A';
+        return WARNA[indeks];
+    }
+
+    public static final String[] WARNA = {
+        "\u001B[38;2;255;255;255m", // Putih, A
+        "\u001B[38;2;166;166;166m", // Abu-Abu, B
+        "\u001B[38;2;255;145;76m", // Oranye, C
+        "\u001B[38;2;255;222;89m", // Kuning, D
+        "\u001B[38;2;0;191;98m", // Hijau, E
+        "\u001B[38;2;12;193;224m", // Biru Muda, F
+        "\u001B[38;2;0;74;173m", // Biru Tua, G
+        "\u001B[38;2;255;101;195m", // Pink, H
+        "\u001B[38;2;140;82;255m", // Ungu, I
+        "\u001B[38;2;255;87;87m", // Terracota, J
+        "\u001B[38;2;126;217;86m", // Hijau Muda, K (EXIT)
+        "\u001B[38;2;240;255;162m", // Kuning Pucat, L
+        "\u001B[38;2;254;189;89m", // Kuning Tua, M
+        "\u001B[38;2;148;73;18m", // Coklat, N
+        "\u001B[38;2;192;255;114m", // Lime, O
+        "\u001B[38;2;255;49;49m", // Merah, P (PRIMARY)
+        "\u001B[38;2;0;137;42m", // Hijau Tua, Q
+        "\u001B[38;2;92;225;230m", // Cyan, R
+        "\u001B[38;2;0;151;178m", // Turqoise, S
+        "\u001B[38;2;56;182;255m", // Biru Langit, T
+        "\u001B[38;2;82;113;255m", // Indigo, U
+        "\u001B[38;2;245;57;255m", // Magenta, V
+        "\u001B[38;2;240;175;255m", // Lavender, W
+        "\u001B[38;2;203;107;230m", // Violet, X
+        "\u001B[38;2;93;23;235m", // Ungu Tua, Y
+        "\u001B[38;2;128;0;0m" // Maroon, Z
+    };
+
+    public static final String WARNA_DEFAULT = "\u001B[0m";
 }

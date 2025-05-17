@@ -3,27 +3,53 @@ import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("==========================================");
+        System.out.println("SELAMAT DATANG DI RUSH HOUR PUZZLE SOLVER!");
+        System.out.println("==========================================");
+        System.out.println();
+
         State goal = null;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan path test case(.txt): ");
-        String filePath = scanner.nextLine();
-        System.out.println("");
-        if (!Reader.readInputFile(filePath)) {
-            System.out.println("Gagal membaca file test case atau file tidak ada.\n");
-            scanner.close();
-            return;
+        String filePath;
+
+        while (true) {
+            System.out.print("Masukkan path test case(.txt): ");
+            filePath = scanner.nextLine();
+            System.out.println("");
+            if (filePath.isEmpty()) {
+                System.out.println("Path tidak boleh kosong! Coba lagi.");
+                continue;
+            }
+            if (!Reader.readInputFile(filePath)) {
+                System.out.println("Gagal membaca file test case atau file tidak ada.\n");
+                continue;
+            } else {
+                break;
+            }
         }
-        System.out.println("Masukkan algoritma yang ingin digunakan: ");
+        
+        System.out.println("==========================================");
+        System.out.println("Pilih algoritma pencarian:");
         System.out.println("1. Greedy Best First Search");
         System.out.println("2. Uniform Cost Search (UCS)");
         System.out.println("3. A*");
-        String algorithmMethod = scanner.nextLine();
+        System.out.println("Masukkan algoritma yang ingin digunakan: ");
+        String algorithmMethod;
         System.out.println("");
-        if (!algorithmMethod.equals("1") && !algorithmMethod.equals("2") && !algorithmMethod.equals("3")) {
-            System.out.println("Algoritma tidak valid.\n");
-            scanner.close();
-            return;
+        while (true) {
+            algorithmMethod = scanner.nextLine();
+            if (algorithmMethod.isEmpty()) {
+                System.out.println("Pilihan algoritma tidak boleh kosong! Coba lagi.");
+                continue;
+            }
+            if (!algorithmMethod.equals("1") && !algorithmMethod.equals("2") && !algorithmMethod.equals("3")) {
+                System.out.println("Algoritma tidak valid.\n");
+                continue;
+            } else {
+                break;
+            }         
         }
+       
         long startTime = System.currentTimeMillis();
         if (algorithmMethod.equals("1")) {
             System.out.println("Menggunakan algoritma Greedy Best First Search.\n");
@@ -62,7 +88,8 @@ public class Main {
         int step = 1;
         while (!path.isEmpty()) {
             State s = path.pop();
-            System.out.println("Step " + step + ":");
+            System.out.print("Gerakan " + step + ": ");
+            System.out.println(s.getMovedPiece() + " - " + s.getMovedPieceDirection());
             System.out.println(s.getBoard(Reader.rows, Reader.cols));
             System.out.println();
             step++;
