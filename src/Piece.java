@@ -24,12 +24,14 @@ public class Piece {
         return id + " at (" + row + "," + col + ") " + (isHorizontal ? "H" : "V") + " len=" + length;
     }
 
+    // Menggerakan piece
     public Piece move(int direction) {
         return isHorizontal
             ? new Piece(id, row, col + direction, length, true)
             : new Piece(id, row + direction, col, length, false);
     }
 
+    // Mengcopy piece
     public Piece copy() {
         return new Piece(id, row, col, length, isHorizontal);
     }

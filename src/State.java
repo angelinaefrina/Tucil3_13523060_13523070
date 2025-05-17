@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
 
 public class State implements Comparable<State> {
     private final List<Piece> pieces;
@@ -29,6 +33,7 @@ public class State implements Comparable<State> {
     public int getCols() { return cols; }
     public int getRows() { return rows; }
 
+    // Mengecek apakah state sekarang adalah goal state
     public boolean isGoal() {
         Piece primary = pieces.get(0);
         
@@ -92,6 +97,7 @@ public class State implements Comparable<State> {
         System.out.println();
     }
 
+    // Menghasilkan semua state yang mungkin dari state sekarang
     public List<State> generateNextStates(int rows, int cols) {
         List<State> nextStates = new ArrayList<>();
 
