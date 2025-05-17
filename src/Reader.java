@@ -163,7 +163,6 @@ public class Reader {
             }
         }
 
-        // Default to right exit if no 'K' is found
         if (!hasLeftExit && !hasRightExit && !hasTopExit && !hasBottomExit) {
             System.out.println("Exit tidak ditemukan, program akan keluar.");
             System.exit(0);
