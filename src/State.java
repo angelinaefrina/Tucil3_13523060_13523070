@@ -224,10 +224,13 @@ public class State implements Comparable<State> {
     public String getBoard(int rows, int cols) {
         char[][] grid = new char[rows][cols];
         for (char[] row : grid) Arrays.fill(row, '.');
+        char[][] parentGrid = new char[rows][cols];
+        for (char[] row : parentGrid) Arrays.fill(row, '.');
 
         char movedPiece = getMovedPiece();
         final String BG_YELLOW = "\u001B[43m";
 
+        // Membandingkan titik / sel kosong
         for (Piece p : pieces) {
             int r = p.getRow(), c = p.getCol();
             for (int i = 0; i < p.getLength(); i++) {
@@ -235,6 +238,25 @@ public class State implements Comparable<State> {
                 else grid[r + i][c] = p.getId();
             }
         }
+        int x = -1, y = -1;
+        if (parent != null) {
+            for (Piece p : getParent().pieces) {
+                int r = p.getRow(), c = p.getCol();
+                for (int i = 0; i < p.getLength(); i++) {
+                    if (p.isHorizontal()) parentGrid[r][c + i] = p.getId();
+                    else parentGrid[r + i][c] = p.getId();
+                }
+            }
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    if (grid[i][j] == '.' && parentGrid[i][j] != '.') {
+                        x = i;
+                        y = j;
+                    }
+                }
+            }
+        }
+        
 
         int exitLocation = 0;
         if (Reader.hasTopExit() || Reader.hasBottomExit()) {
@@ -251,6 +273,8 @@ public class State implements Comparable<State> {
                     char cell = grid[r][c];
                     if (cell == movedPiece) { // highlight piece yang gerak
                         sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
+                    } else if (cell == '.' && r == x && c == y) {
+                        sb.append(BG_YELLOW).append(cell).append(WARNA_DEFAULT);
                     } else {
                         sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
@@ -285,6 +309,8 @@ public class State implements Comparable<State> {
                     char cell = grid[r][c];
                     if (cell == movedPiece) { // highlight piece yang gerak
                         sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
+                    } else if (cell == '.' && r == x && c == y) {
+                        sb.append(BG_YELLOW).append(cell).append(WARNA_DEFAULT);
                     } else {
                         sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
@@ -305,6 +331,8 @@ public class State implements Comparable<State> {
                     char cell = grid[r][c];
                     if (cell == movedPiece) { // highlight piece yang gerak
                         sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
+                    } else if (cell == '.' && r == x && c == y) {
+                        sb.append(BG_YELLOW).append(cell).append(WARNA_DEFAULT);
                     } else {
                         sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
@@ -319,6 +347,8 @@ public class State implements Comparable<State> {
                     char cell = grid[r][c];
                     if (cell == movedPiece) { // highlight piece yang gerak
                         sb.append(BG_YELLOW).append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
+                    } else if (cell == '.' && r == x && c == y) {
+                        sb.append(BG_YELLOW).append(cell).append(WARNA_DEFAULT);
                     } else {
                         sb.append(getWarnaPiece(cell)).append(cell).append(WARNA_DEFAULT);
                     }
