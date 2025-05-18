@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 public class Algorithm {
     private static int nodesVisited = 0;
@@ -7,11 +10,14 @@ public class Algorithm {
         return nodesVisited;
     }
 
+    // Greedy Best First Search
+    // hanya menggunakan h(n)
     public static State greedy(State initial, int rows, int cols) {
         PriorityQueue<State> queue = new PriorityQueue<>(Comparator.comparingInt(Algorithm::heuristic));
         Set<String> visited = new HashSet<>();
 
         queue.add(initial);
+        nodesVisited = 0;
 
         while (!queue.isEmpty()) {
             State current = queue.poll();
@@ -33,25 +39,29 @@ public class Algorithm {
         return null;
     }
 
+    // Uniform Cost Search
+    // hanya menggunakan g(n)
     public static State ucs(State initial, int rows, int cols) {
-        PriorityQueue<State> queue = new PriorityQueue<>(Comparator.comparingInt(State::getCost));
+        PriorityQueue<State> frontier = new PriorityQueue<>(Comparator.comparingInt(State::getCost));
         Set<String> visited = new HashSet<>();
 
-        queue.add(initial);
+        frontier.add(initial); // inisialisasi dengan state awal
+        nodesVisited = 0;
 
-        while (!queue.isEmpty()) {
-            State current = queue.poll();
-            if (visited.contains(current.toString())) continue;
-            visited.add(current.toString());
-            nodesVisited++;
+        while (!frontier.isEmpty()) {
+            State current = frontier.poll();
 
             if (current.isGoal()) {
                 return current;
             }
 
-            for (State next : current.generateNextStates(rows, cols)) {
-                if (!visited.contains(next.toString())) {
-                    queue.add(next);
+            if (visited.contains(current.toString())) continue;
+            visited.add(current.toString());
+            nodesVisited++;
+
+            for (State neighbor : current.generateNextStates(rows, cols)) {
+                if (!visited.contains(neighbor.toString())) {
+                    frontier.add(neighbor); // tambahkan tetangga ke queue
                 }
             }
         }
@@ -59,11 +69,14 @@ public class Algorithm {
         return null;
     }
 
+    // A* Search
+    // menggunakan f(n) = g(n) + h(n)
     public static State aStar(State initial, int rows, int cols) {
         PriorityQueue<State> queue = new PriorityQueue<>(Comparator.comparingInt(State::getTotalCost));
         Set<String> visited = new HashSet<>();
 
         queue.add(initial);
+        nodesVisited = 0;
 
         while (!queue.isEmpty()) {
             State current = queue.poll();
