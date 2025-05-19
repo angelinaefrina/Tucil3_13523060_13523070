@@ -55,24 +55,24 @@ public class Main {
         int heuristicMethod = 0;
         System.out.println("");
         System.out.println("==========================================");
-        if (algorithmMethod.equals("1") || algorithmMethod.equals("2")) {
+        if (algorithmMethod.equals("1") || algorithmMethod.equals("3")) {
             System.out.println("Pilih Heuristik:");
             System.out.println("1. Manhattan Distance");
             System.out.println("2. Blocking Vehicles");
-            
-        while (true) {
-            try {
-                heuristicMethod = scanner.nextInt(); // Read integer input
-                scanner.nextLine(); // Consume the leftover newline character
-                if (heuristicMethod != 1 && heuristicMethod != 2) {
-                    System.out.println("Heuristik tidak valid.\n");
-                    continue;
-                } else {
-                    break;
+            while (true) {
+                try {
+                    heuristicMethod = scanner.nextInt(); // Read integer input
+                    scanner.nextLine(); // Consume the leftover newline character
+                    if (heuristicMethod != 1 && heuristicMethod != 2) {
+                        System.out.println("Heuristik tidak valid.\n");
+                        continue;
+                    } else {
+                        break;
+                    }
+                } catch (Exception e) {
+                    System.out.println("Input tidak valid! Masukkan angka 1 atau 2.\n");
+                    scanner.nextLine(); // Clear invalid input
                 }
-            } catch (Exception e) {
-                System.out.println("Input tidak valid! Masukkan angka 1 atau 2.\n");
-                scanner.nextLine(); // Clear invalid input
             }
         }
 
@@ -115,7 +115,7 @@ public class Main {
         }
         scanner.close();
     }
-    }
+    
     public static void printSolutionPath(State state) {
         Stack<State> path = new Stack<>();
         while (state != null) {
