@@ -1,5 +1,6 @@
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 
@@ -12,8 +13,15 @@ public class Algorithm {
 
     // Greedy Best First Search
     // hanya menggunakan h(n)
-    public static State greedy(State initial, int rows, int cols) {
-        PriorityQueue<State> queue = new PriorityQueue<>(Comparator.comparingInt(Algorithm::heuristic));
+    public static State greedy(State initial, int rows, int cols, int heuristic) {
+        PriorityQueue<State> queue;
+        if (heuristic == 1) {
+            queue = new PriorityQueue<>(Comparator.comparingInt(Algorithm::manhattanDistance));
+        } else if (heuristic == 2) {
+            queue = new PriorityQueue<>(Comparator.comparingInt(Algorithm::blockingVehicles));
+        } else {
+            throw new IllegalArgumentException("Invalid heuristic type");
+        }
         Set<String> visited = new HashSet<>();
 
         queue.add(initial);
@@ -71,8 +79,17 @@ public class Algorithm {
 
     // A* Search
     // menggunakan f(n) = g(n) + h(n)
-    public static State aStar(State initial, int rows, int cols) {
-        PriorityQueue<State> queue = new PriorityQueue<>(Comparator.comparingInt(State::getTotalCost));
+    public static State aStar(State initial, int rows, int cols, int heuristic) {
+        PriorityQueue<State> queue;
+        if (heuristic == 1) {
+            // Use Manhattan Distance as the heuristic
+            queue = new PriorityQueue<>(Comparator.comparingInt(state -> state.getCost() + manhattanDistance(state)));
+        } else if (heuristic == 2) {
+            // Use Blocking Vehicles Heuristic as the heuristic
+            queue = new PriorityQueue<>(Comparator.comparingInt(state -> state.getCost() + blockingVehicles(state)));
+        } else {
+            throw new IllegalArgumentException("Invalid heuristic type");
+        }
         Set<String> visited = new HashSet<>();
 
         queue.add(initial);
@@ -98,8 +115,8 @@ public class Algorithm {
         return null;
     }
 
-    // Heuristic function
-    private static int heuristic(State state) {
+    // Heuristic functions
+    private static int manhattanDistance(State state) {
         Piece primary = state.getPieces().get(0);
         
         // Right exit
@@ -129,5 +146,86 @@ public class Algorithm {
             return rowDistance + colDistance;
         }
         return 0;
+    }
+
+    private static int blockingVehicles(State state) {
+        List<Piece> pieces = state.getPieces();
+        Piece primary = pieces.get(0);
+        int blockingCount = 0;
+        int distanceComponent = 0;
+        
+        // For right exit
+        if (Reader.hasRightExit()) {
+            int primaryRow = primary.getRow();
+            int endCol = primary.getCol() + primary.getLength() - 1;
+            
+            // Count vehicles blocking the path between the primary piece and exit
+            for (int i = 1; i < pieces.size(); i++) {
+                Piece p = pieces.get(i);
+                // Check if piece is in the way horizontally
+                if (p.getRow() == primaryRow && p.getCol() > endCol) {
+                    blockingCount++;
+                }
+            }
+            
+            // Add distance component
+            distanceComponent = Math.abs(primaryRow - Reader.getExitRow()) + 
+                            ((state.getCols() - 1) - endCol);
+        } 
+        // For left exit
+        else if (Reader.hasLeftExit()) {
+            int primaryRow = primary.getRow();
+            int startCol = primary.getCol();
+            
+            // Count vehicles blocking the path to the left
+            for (int i = 1; i < pieces.size(); i++) {
+                Piece p = pieces.get(i);
+                // Check if piece is in the way horizontally
+                if (p.getRow() == primaryRow && p.getCol() < startCol) {
+                    blockingCount++;
+                }
+            }
+            
+            // Add distance component
+            distanceComponent = Math.abs(primaryRow - Reader.getExitRow()) + startCol;
+        }
+        // For top exit
+        else if (Reader.hasTopExit()) {
+            int primaryCol = primary.getCol();
+            int startRow = primary.getRow();
+            
+            // Count vehicles blocking the path upward
+            for (int i = 1; i < pieces.size(); i++) {
+                Piece p = pieces.get(i);
+                // Check if piece is in the way vertically
+                if (p.getCol() == primaryCol && p.getRow() < startRow) {
+                    blockingCount++;
+                }
+            }
+            
+            // Add distance component
+            distanceComponent = Math.abs(primaryCol - Reader.getExitCol()) + startRow;
+        }
+        // For bottom exit
+        else if (Reader.hasBottomExit()) {
+            int primaryCol = primary.getCol();
+            int endRow = primary.getRow() + (primary.isHorizontal() ? 0 : primary.getLength() - 1);
+            
+            // Count vehicles blocking the path downward
+            for (int i = 1; i < pieces.size(); i++) {
+                Piece p = pieces.get(i);
+                // Check if piece is in the way vertically
+                if (p.getCol() == primaryCol && p.getRow() > endRow) {
+                    blockingCount++;
+                }
+            }
+            
+            // Add distance component
+            distanceComponent = Math.abs(primaryCol - Reader.getExitCol()) + 
+                            ((state.getRows() - 1) - endRow);
+        }
+        
+        // Weight the blocking count more heavily than distance
+        return (blockingCount * 2) + distanceComponent;
     }
 }

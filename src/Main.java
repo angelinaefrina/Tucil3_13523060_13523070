@@ -51,17 +51,41 @@ public class Main {
                 break;
             }         
         }
-       
+
+        int heuristicMethod = 0;
+        System.out.println("");
+        System.out.println("==========================================");
+        if (algorithmMethod.equals("1") || algorithmMethod.equals("2")) {
+            System.out.println("Pilih Heuristik:");
+            System.out.println("1. Manhattan Distance");
+            System.out.println("2. Blocking Vehicles");
+            
+        while (true) {
+            try {
+                heuristicMethod = scanner.nextInt(); // Read integer input
+                scanner.nextLine(); // Consume the leftover newline character
+                if (heuristicMethod != 1 && heuristicMethod != 2) {
+                    System.out.println("Heuristik tidak valid.\n");
+                    continue;
+                } else {
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("Input tidak valid! Masukkan angka 1 atau 2.\n");
+                scanner.nextLine(); // Clear invalid input
+            }
+        }
+
         long startTime = System.currentTimeMillis();
         if (algorithmMethod.equals("1")) {
             System.out.println("Menggunakan algoritma Greedy Best First Search.\n");
-            goal = Algorithm.greedy(Reader.getInitialState(), Reader.rows, Reader.cols);
+            goal = Algorithm.greedy(Reader.getInitialState(), Reader.rows, Reader.cols, heuristicMethod);
         } else if (algorithmMethod.equals("2")) {
             System.out.println("Menggunakan algoritma Uniform Cost Search (UCS).\n");
             goal = Algorithm.ucs(Reader.getInitialState(), Reader.rows, Reader.cols);
         } else {
             System.out.println("Menggunakan algoritma A*.\n");
-            goal = Algorithm.aStar(Reader.getInitialState(), Reader.rows, Reader.cols);
+            goal = Algorithm.aStar(Reader.getInitialState(), Reader.rows, Reader.cols, heuristicMethod);
         }
         if (goal != null) {
             System.out.println("Solution found!");
@@ -91,7 +115,7 @@ public class Main {
         }
         scanner.close();
     }
-
+    }
     public static void printSolutionPath(State state) {
         Stack<State> path = new Stack<>();
         while (state != null) {
@@ -139,6 +163,7 @@ public class Main {
             }
         } catch (IOException e){
             System.out.println("error!");
+            e.printStackTrace();
         }
     }
 }
