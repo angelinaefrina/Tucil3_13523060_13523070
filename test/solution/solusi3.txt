@@ -1,0 +1,36 @@
+Papan awal: 
+     K
+A...BB
+ACC...
+..D..P
+..DFEP
+GHHF..
+GJJLL.
+
+Gerakan 1: B - Kiri
+     K
+A..BB.
+ACC...
+..D..P
+..DFEP
+GHHF..
+GJJLL.
+
+Gerakan 2: P - Atas
+     K
+A..BB.
+ACC..P
+..D..P
+..DFE.
+GHHF..
+GJJLL.
+
+Gerakan 3: P - Atas
+     K
+A..BBP
+ACC..P
+..D...
+..DFE.
+GHHF..
+GJJLL.
+

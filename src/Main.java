@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -70,10 +73,22 @@ public class Main {
         long endTime = System.currentTimeMillis();
 
         // Output
-        
         System.out.println("Banyak gerakan yang diperiksa: " + Algorithm.getNodesVisited() +"\n");
         System.out.println("Waktu pencarian: " + (endTime - startTime) + " ms\n");
 
+        if (goal != null) {
+            // Prompt menyimpan hasil
+            System.out.println("Apakah anda ingin menyimpan hasilnya? (ya/tidak)");
+            String save_solusi = scanner.nextLine();
+            if (save_solusi.equals("ya")) {
+                System.out.println("Masukkan nama file untuk menyimpan hasil: ");
+                String output_filename = scanner.nextLine();
+                outputFile(goal, "test/solution/" + output_filename + ".txt");
+                System.out.println("");
+                System.out.println("Solusi berhasil disimpan pada test/solution!");
+            }
+            System.out.println();
+        }
         scanner.close();
     }
 
@@ -87,10 +102,43 @@ public class Main {
         int step = 1;
         while (!path.isEmpty()) {
             State s = path.pop();
-            System.out.print("Gerakan " + step + ": ");
-            System.out.println(s.getMovedPiece() + " - " + s.getMovedPieceDirection());
+            if (s.getParent() != null) {
+                System.out.print("Gerakan " + step + ": ");
+                System.out.println(s.getMovedPiece() + " - " + s.getMovedPieceDirection());
+                step++;
+            } else {
+                System.out.println("Papan awal: ");
+            }
             System.out.println(s.getBoard(Reader.rows, Reader.cols));
-            step++;
+        }
+    }
+
+    public static void outputFile(State state, String filenames){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filenames))) {
+            Stack<State> path = new Stack<>();
+            while (state != null) {
+                path.push(state);
+                state = state.getParent();
+            }
+
+            int step = 1;
+            while (!path.isEmpty()) {
+                State s = path.pop();
+                if (s.getParent() != null) {
+                    writer.write("Gerakan " + step + ": ");
+                    writer.write(s.getMovedPiece() + " - " + s.getMovedPieceDirection());
+                    writer.newLine();
+                    step++;
+                } else {
+                    writer.write("Papan awal: ");
+                    writer.newLine();
+                }
+                
+                writer.write(s.getBoardPlain(Reader.rows, Reader.cols));
+                writer.newLine();
+            }
+        } catch (IOException e){
+            System.out.println("error!");
         }
     }
 }

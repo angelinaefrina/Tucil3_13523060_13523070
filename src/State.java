@@ -406,4 +406,93 @@ public class State implements Comparable<State> {
     };
 
     public static final String WARNA_DEFAULT = "\u001B[0m";
+
+    public String getBoardPlain(int rows, int cols) {
+        char[][] grid = new char[rows][cols];
+        for (char[] row : grid) Arrays.fill(row, '.');
+        char[][] parentGrid = new char[rows][cols];
+        for (char[] row : parentGrid) Arrays.fill(row, '.');
+
+        char movedPiece = getMovedPiece();
+
+        for (Piece p : pieces) {
+            int r = p.getRow(), c = p.getCol();
+            for (int i = 0; i < p.getLength(); i++) {
+                if (p.isHorizontal()) grid[r][c + i] = p.getId();
+                else grid[r + i][c] = p.getId();
+            }
+        }
+
+        int x = -1, y = -1;
+        if (parent != null) {
+            for (Piece p : getParent().pieces) {
+                int r = p.getRow(), c = p.getCol();
+                for (int i = 0; i < p.getLength(); i++) {
+                    if (p.isHorizontal()) parentGrid[r][c + i] = p.getId();
+                    else parentGrid[r + i][c] = p.getId();
+                }
+            }
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    if (grid[i][j] == '.' && parentGrid[i][j] != '.') {
+                        x = i;
+                        y = j;
+                    }
+                }
+            }
+        }
+
+        int exitLocation = 0;
+        if (Reader.hasTopExit() || Reader.hasBottomExit()) {
+            exitLocation = Reader.getExitCol();
+        } else if (Reader.hasLeftExit() || Reader.hasRightExit()) {
+            exitLocation = Reader.getExitRow();
+        }
+
+        StringBuilder sb = new StringBuilder();
+        if (Reader.hasBottomExit()) {
+            for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < cols; c++) {
+                    sb.append(grid[r][c]);
+                }
+                sb.append("\n");
+            }
+            for (int i = 0; i < cols; i++) {
+                sb.append(i == exitLocation ? "K" : " ");
+            }
+            sb.append("\n");
+        }
+        else if (Reader.hasTopExit()) {
+            for (int i = 0; i < cols; i++) {
+                sb.append(i == exitLocation ? "K" : " ");
+            }
+            sb.append("\n");
+            for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < cols; c++) {
+                    sb.append(grid[r][c]);
+                }
+                sb.append("\n");
+            }
+        }
+        else if (Reader.hasLeftExit()) {
+            for (int r = 0; r < rows; r++) {
+                sb.append(r == exitLocation ? "K" : " ");
+                for (int c = 0; c < cols; c++) {
+                    sb.append(grid[r][c]);
+                }
+                sb.append("\n");
+            }
+        }
+        else if (Reader.hasRightExit()) {
+            for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < cols; c++) {
+                    sb.append(grid[r][c]);
+                }
+                sb.append(r == exitLocation ? "K" : "");
+                sb.append("\n");
+            }
+        }
+
+        return sb.toString();
+    }
 }
