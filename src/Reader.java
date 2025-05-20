@@ -15,24 +15,24 @@ public class Reader {
     private static int exitRow = -1;
     private static int exitCol = -1;
     public static boolean readInputFile(String filePath) {
-        System.out.println("DEBUG: Starting to read file: " + filePath);
+        // System.out.println("DEBUG: Starting to read file: " + filePath);
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String[] dimensions = br.readLine().split(" ");
             rows = Integer.parseInt(dimensions[0]);
             cols = Integer.parseInt(dimensions[1]);
-            System.out.println("Rows: " + rows + ", Cols: " + cols);
+            // System.out.println("Rows: " + rows + ", Cols: " + cols);
             pieceCount = Integer.parseInt(br.readLine());
             pieceCount += 1; // + PRIMARY PIECE
-            System.out.println("DEBUG: Total expected pieces: " + pieceCount);
+            // System.out.println("DEBUG: Total expected pieces: " + pieceCount);
 
             ArrayList<String> boardLines = new ArrayList<>();
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.isEmpty()) continue;
                 boardLines.add(line);
-                System.out.println("DEBUG: Read board line: " + line);
+                // System.out.println("DEBUG: Read board line: " + line);
             }
-            System.out.println("DEBUG: Total board lines read: " + boardLines.size());
+            // System.out.println("DEBUG: Total board lines read: " + boardLines.size());
 
             findExitLocations(boardLines);
 
@@ -54,9 +54,9 @@ public class Reader {
                 }
             }
 
-            System.out.println("DEBUG: Board:");
+            // System.out.println("DEBUG: Board:");
             for (int i = 0; i < rows; i++) {
-                System.out.println("DEBUG: " + new String(board[i]));
+                // System.out.println("DEBUG: " + new String(board[i]));
             }
 
             // Extract unique pieces
@@ -69,23 +69,23 @@ public class Reader {
                 }
             }
 
-            System.out.println("DEBUG: Unique pieces: " + uniquePieces);
+            // System.out.println("DEBUG: Unique pieces: " + uniquePieces);
 
             List<Piece> pieces = new ArrayList<>();
             for (char pieceChar : uniquePieces) {
-                System.out.println("DEBUG: Extracting piece: " + pieceChar);
+                // System.out.println("DEBUG: Extracting piece: " + pieceChar);
                 Piece extractedPiece = extractPiece(pieceChar);
                 if (extractedPiece != null) {
                     pieces.add(extractedPiece);
-                    System.out.println("DEBUG: Added piece " + pieceChar);
+                    // System.out.println("DEBUG: Added piece " + pieceChar);
                 } else {
-                    System.out.println("DEBUG: Failed to extract piece " + pieceChar);
+                    // System.out.println("DEBUG: Failed to extract piece " + pieceChar);
                 }
             }
 
             extractedPieces = pieces;
 
-            System.out.println("DEBUG: Total pieces: " + pieces.size() + "/" + pieceCount);
+            // System.out.println("DEBUG: Total pieces: " + pieces.size() + "/" + pieceCount);
             return pieces.size() == pieceCount;
         } catch (Exception e) {
             System.out.println("Exception occurred: " + e.getMessage());
@@ -142,22 +142,22 @@ public class Reader {
                         hasTopExit = true;
                         exitRow = 0;
                         exitCol = j;
-                        System.out.println("DEBUG: Exit di atas: " + exitCol);
+                        // System.out.println("DEBUG: Exit di atas: " + exitCol);
                     } else if (i == boardLines.size() - 1) { // Bottom
                         hasBottomExit = true;
                         exitRow = rows - 1;
                         exitCol = j;
-                        System.out.println("DEBUG: Exit di bawah: " + exitCol);
+                        // System.out.println("DEBUG: Exit di bawah: " + exitCol);
                     } else if (j == 0) { // Left
                         hasLeftExit = true;
                         exitRow = i;
                         exitCol = 0;
-                        System.out.println("DEBUG: Exit di kiri: " + exitRow);
+                        // System.out.println("DEBUG: Exit di kiri: " + exitRow);
                     } else if (j == line.length() - 1) { // Right
                         hasRightExit = true;
                         exitRow = i;
                         exitCol = cols - 1;
-                        System.out.println("DEBUG: Exit di kanan: " + exitRow);
+                        // System.out.println("DEBUG: Exit di kanan: " + exitRow);
                     }
                 }
             }
@@ -167,7 +167,7 @@ public class Reader {
             System.out.println("Exit tidak ditemukan, program akan keluar.");
             System.exit(0);
         } else {
-            System.out.println("DEBUG: Exit [" + exitRow + "," + exitCol + "]");
+            // System.out.println("DEBUG: Exit [" + exitRow + "," + exitCol + "]");
         }
     }
 

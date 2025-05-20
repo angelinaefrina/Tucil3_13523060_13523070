@@ -1,0 +1,80 @@
+Papan awal: 
+AAB..F
+..BCDF
+GPPCDFK
+GH.III
+GHJ...
+LLJMM.
+
+Gerakan 1: C - Atas
+AABC.F
+..BCDF
+GPP.DFK
+GH.III
+GHJ...
+LLJMM.
+
+Gerakan 2: P - Kanan
+AABC.F
+..BCDF
+G.PPDFK
+GH.III
+GHJ...
+LLJMM.
+
+Gerakan 3: I - Kiri
+AABC.F
+..BCDF
+G.PPDFK
+GHIII.
+GHJ...
+LLJMM.
+
+Gerakan 4: F - Bawah
+AABC..
+..BCDF
+G.PPDFK
+GHIIIF
+GHJ...
+LLJMM.
+
+Gerakan 5: D - Atas
+AABCD.
+..BCDF
+G.PP.FK
+GHIIIF
+GHJ...
+LLJMM.
+
+Gerakan 6: F - Bawah
+AABCD.
+..BCD.
+G.PP.FK
+GHIIIF
+GHJ..F
+LLJMM.
+
+Gerakan 7: F - Bawah
+AABCD.
+..BCD.
+G.PP..K
+GHIIIF
+GHJ..F
+LLJMMF
+
+Gerakan 8: P - Kanan
+AABCD.
+..BCD.
+G..PP.K
+GHIIIF
+GHJ..F
+LLJMMF
+
+Gerakan 9: P - Kanan
+AABCD.
+..BCD.
+G...PPK
+GHIIIF
+GHJ..F
+LLJMMF
+

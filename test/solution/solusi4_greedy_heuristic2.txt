@@ -1,0 +1,768 @@
+Papan awal: 
+ .AABB.
+ CCDE..
+ .FDEGG
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 1: H - Atas
+ .AABB.
+ CCDE..
+ HFDEGG
+KHFPPIJ
+ HFL.IJ
+ ..LMMJ
+
+Gerakan 2: B - Kanan
+ .AA.BB
+ CCDE..
+ HFDEGG
+KHFPPIJ
+ HFL.IJ
+ ..LMMJ
+
+Gerakan 3: A - Kiri
+ AA..BB
+ CCDE..
+ HFDEGG
+KHFPPIJ
+ HFL.IJ
+ ..LMMJ
+
+Gerakan 4: E - Atas
+ AA.EBB
+ CCDE..
+ HFD.GG
+KHFPPIJ
+ HFL.IJ
+ ..LMMJ
+
+Gerakan 5: A - Kanan
+ .AAEBB
+ CCDE..
+ HFD.GG
+KHFPPIJ
+ HFL.IJ
+ ..LMMJ
+
+Gerakan 6: G - Kiri
+ .AAEBB
+ CCDE..
+ HFDGG.
+KHFPPIJ
+ HFL.IJ
+ ..LMMJ
+
+Gerakan 7: J - Atas
+ .AAEBB
+ CCDE..
+ HFDGGJ
+KHFPPIJ
+ HFL.IJ
+ ..LMM.
+
+Gerakan 8: A - Kiri
+ AA.EBB
+ CCDE..
+ HFDGGJ
+KHFPPIJ
+ HFL.IJ
+ ..LMM.
+
+Gerakan 9: M - Kanan
+ AA.EBB
+ CCDE..
+ HFDGGJ
+KHFPPIJ
+ HFL.IJ
+ ..L.MM
+
+Gerakan 10: J - Atas
+ AA.EBB
+ CCDE.J
+ HFDGGJ
+KHFPPIJ
+ HFL.I.
+ ..L.MM
+
+Gerakan 11: D - Atas
+ AADEBB
+ CCDE.J
+ HF.GGJ
+KHFPPIJ
+ HFL.I.
+ ..L.MM
+
+Gerakan 12: G - Kiri
+ AADEBB
+ CCDE.J
+ HFGG.J
+KHFPPIJ
+ HFL.I.
+ ..L.MM
+
+Gerakan 13: I - Atas
+ AADEBB
+ CCDE.J
+ HFGGIJ
+KHFPPIJ
+ HFL...
+ ..L.MM
+
+Gerakan 14: F - Bawah
+ AADEBB
+ CCDE.J
+ H.GGIJ
+KHFPPIJ
+ HFL...
+ .FL.MM
+
+Gerakan 15: M - Kiri
+ AADEBB
+ CCDE.J
+ H.GGIJ
+KHFPPIJ
+ HFL...
+ .FLMM.
+
+Gerakan 16: J - Bawah
+ AADEBB
+ CCDE..
+ H.GGIJ
+KHFPPIJ
+ HFL..J
+ .FLMM.
+
+Gerakan 17: M - Kanan
+ AADEBB
+ CCDE..
+ H.GGIJ
+KHFPPIJ
+ HFL..J
+ .FL.MM
+
+Gerakan 18: G - Kiri
+ AADEBB
+ CCDE..
+ HGG.IJ
+KHFPPIJ
+ HFL..J
+ .FL.MM
+
+Gerakan 19: J - Atas
+ AADEBB
+ CCDE.J
+ HGG.IJ
+KHFPPIJ
+ HFL...
+ .FL.MM
+
+Gerakan 20: E - Bawah
+ AAD.BB
+ CCDE.J
+ HGGEIJ
+KHFPPIJ
+ HFL...
+ .FL.MM
+
+Gerakan 21: B - Kiri
+ AADBB.
+ CCDE.J
+ HGGEIJ
+KHFPPIJ
+ HFL...
+ .FL.MM
+
+Gerakan 22: J - Atas
+ AADBBJ
+ CCDE.J
+ HGGEIJ
+KHFPPI.
+ HFL...
+ .FL.MM
+
+Gerakan 23: M - Kiri
+ AADBBJ
+ CCDE.J
+ HGGEIJ
+KHFPPI.
+ HFL...
+ .FLMM.
+
+Gerakan 24: I - Atas
+ AADBBJ
+ CCDEIJ
+ HGGEIJ
+KHFPP..
+ HFL...
+ .FLMM.
+
+Gerakan 25: M - Kanan
+ AADBBJ
+ CCDEIJ
+ HGGEIJ
+KHFPP..
+ HFL...
+ .FL.MM
+
+Gerakan 26: P - Kanan
+ AADBBJ
+ CCDEIJ
+ HGGEIJ
+KHF.PP.
+ HFL...
+ .FL.MM
+
+Gerakan 27: P - Kanan
+ AADBBJ
+ CCDEIJ
+ HGGEIJ
+KHF..PP
+ HFL...
+ .FL.MM
+
+Gerakan 28: E - Bawah
+ AADBBJ
+ CCD.IJ
+ HGGEIJ
+KHF.EPP
+ HFL...
+ .FL.MM
+
+Gerakan 29: E - Bawah
+ AADBBJ
+ CCD.IJ
+ HGG.IJ
+KHF.EPP
+ HFLE..
+ .FL.MM
+
+Gerakan 30: E - Bawah
+ AADBBJ
+ CCD.IJ
+ HGG.IJ
+KHF..PP
+ HFLE..
+ .FLEMM
+
+Gerakan 31: P - Kiri
+ AADBBJ
+ CCD.IJ
+ HGG.IJ
+KHF.PP.
+ HFLE..
+ .FLEMM
+
+Gerakan 32: P - Kiri
+ AADBBJ
+ CCD.IJ
+ HGG.IJ
+KHFPP..
+ HFLE..
+ .FLEMM
+
+Gerakan 33: G - Kanan
+ AADBBJ
+ CCD.IJ
+ H.GGIJ
+KHFPP..
+ HFLE..
+ .FLEMM
+
+Gerakan 34: F - Atas
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFPP..
+ HFLE..
+ ..LEMM
+
+Gerakan 35: P - Kanan
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHF.PP.
+ HFLE..
+ ..LEMM
+
+Gerakan 36: P - Kanan
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHF..PP
+ HFLE..
+ ..LEMM
+
+Gerakan 37: L - Atas
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFL.PP
+ HFLE..
+ ...EMM
+
+Gerakan 38: E - Atas
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ ....MM
+
+Gerakan 39: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ ...MM.
+
+Gerakan 40: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ ..MM..
+
+Gerakan 41: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ .MM...
+
+Gerakan 42: E - Bawah
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFL.PP
+ HFLE..
+ .MME..
+
+Gerakan 43: P - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLPP.
+ HFLE..
+ .MME..
+
+Gerakan 44: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLPP.
+ HFLE..
+ MM.E..
+
+Gerakan 45: L - Bawah
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHF.PP.
+ HFLE..
+ MMLE..
+
+Gerakan 46: P - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFPP..
+ HFLE..
+ MMLE..
+
+Gerakan 47: I - Bawah
+ AADBBJ
+ CCD..J
+ HFGGIJ
+KHFPPI.
+ HFLE..
+ MMLE..
+
+Gerakan 48: I - Bawah
+ AADBBJ
+ CCD..J
+ HFGG.J
+KHFPPI.
+ HFLEI.
+ MMLE..
+
+Gerakan 49: G - Kanan
+ AADBBJ
+ CCD..J
+ HF.GGJ
+KHFPPI.
+ HFLEI.
+ MMLE..
+
+Gerakan 50: D - Bawah
+ AA.BBJ
+ CCD..J
+ HFDGGJ
+KHFPPI.
+ HFLEI.
+ MMLE..
+
+Gerakan 51: I - Bawah
+ AA.BBJ
+ CCD..J
+ HFDGGJ
+KHFPP..
+ HFLEI.
+ MMLEI.
+
+Gerakan 52: P - Kanan
+ AA.BBJ
+ CCD..J
+ HFDGGJ
+KHF.PP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 53: D - Bawah
+ AA.BBJ
+ CC...J
+ HFDGGJ
+KHFDPP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 54: C - Kanan
+ AA.BBJ
+ .CC..J
+ HFDGGJ
+KHFDPP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 55: A - Kanan
+ .AABBJ
+ .CC..J
+ HFDGGJ
+KHFDPP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 56: J - Bawah
+ .AABB.
+ .CC..J
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 57: C - Kanan
+ .AABB.
+ ..CC.J
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 58: F - Atas
+ .AABB.
+ .FCC.J
+ HFDGGJ
+KHFDPPJ
+ H.LEI.
+ MMLEI.
+
+Gerakan 59: J - Bawah
+ .AABB.
+ .FCC..
+ HFDGGJ
+KHFDPPJ
+ H.LEIJ
+ MMLEI.
+
+Gerakan 60: J - Bawah
+ .AABB.
+ .FCC..
+ HFDGG.
+KHFDPPJ
+ H.LEIJ
+ MMLEIJ
+
+Gerakan 61: C - Kanan
+ .AABB.
+ .F.CC.
+ HFDGG.
+KHFDPPJ
+ H.LEIJ
+ MMLEIJ
+
+Gerakan 62: G - Kanan
+ .AABB.
+ .F.CC.
+ HFD.GG
+KHFDPPJ
+ H.LEIJ
+ MMLEIJ
+
+Gerakan 63: H - Atas
+ .AABB.
+ HF.CC.
+ HFD.GG
+KHFDPPJ
+ ..LEIJ
+ MMLEIJ
+
+Gerakan 64: G - Kiri
+ .AABB.
+ HF.CC.
+ HFDGG.
+KHFDPPJ
+ ..LEIJ
+ MMLEIJ
+
+Gerakan 65: J - Atas
+ .AABB.
+ HF.CC.
+ HFDGGJ
+KHFDPPJ
+ ..LEIJ
+ MMLEI.
+
+Gerakan 66: J - Atas
+ .AABB.
+ HF.CCJ
+ HFDGGJ
+KHFDPPJ
+ ..LEI.
+ MMLEI.
+
+Gerakan 67: J - Atas
+ .AABBJ
+ HF.CCJ
+ HFDGGJ
+KHFDPP.
+ ..LEI.
+ MMLEI.
+
+Gerakan 68: H - Bawah
+ .AABBJ
+ .F.CCJ
+ HFDGGJ
+KHFDPP.
+ H.LEI.
+ MMLEI.
+
+Gerakan 69: D - Atas
+ .AABBJ
+ .FDCCJ
+ HFDGGJ
+KHF.PP.
+ H.LEI.
+ MMLEI.
+
+Gerakan 70: P - Kiri
+ .AABBJ
+ .FDCCJ
+ HFDGGJ
+KHFPP..
+ H.LEI.
+ MMLEI.
+
+Gerakan 71: F - Bawah
+ .AABBJ
+ ..DCCJ
+ HFDGGJ
+KHFPP..
+ HFLEI.
+ MMLEI.
+
+Gerakan 72: H - Atas
+ .AABBJ
+ H.DCCJ
+ HFDGGJ
+KHFPP..
+ .FLEI.
+ MMLEI.
+
+Gerakan 73: J - Bawah
+ .AABB.
+ H.DCCJ
+ HFDGGJ
+KHFPP.J
+ .FLEI.
+ MMLEI.
+
+Gerakan 74: J - Bawah
+ .AABB.
+ H.DCC.
+ HFDGGJ
+KHFPP.J
+ .FLEIJ
+ MMLEI.
+
+Gerakan 75: I - Atas
+ .AABB.
+ H.DCC.
+ HFDGGJ
+KHFPPIJ
+ .FLEIJ
+ MMLE..
+
+Gerakan 76: A - Kiri
+ AA.BB.
+ H.DCC.
+ HFDGGJ
+KHFPPIJ
+ .FLEIJ
+ MMLE..
+
+Gerakan 77: J - Bawah
+ AA.BB.
+ H.DCC.
+ HFDGG.
+KHFPPIJ
+ .FLEIJ
+ MMLE.J
+
+Gerakan 78: F - Atas
+ AA.BB.
+ HFDCC.
+ HFDGG.
+KHFPPIJ
+ ..LEIJ
+ MMLE.J
+
+Gerakan 79: I - Bawah
+ AA.BB.
+ HFDCC.
+ HFDGG.
+KHFPP.J
+ ..LEIJ
+ MMLEIJ
+
+Gerakan 80: B - Kanan
+ AA..BB
+ HFDCC.
+ HFDGG.
+KHFPP.J
+ ..LEIJ
+ MMLEIJ
+
+Gerakan 81: G - Kanan
+ AA..BB
+ HFDCC.
+ HFD.GG
+KHFPP.J
+ ..LEIJ
+ MMLEIJ
+
+Gerakan 82: F - Bawah
+ AA..BB
+ H.DCC.
+ HFD.GG
+KHFPP.J
+ .FLEIJ
+ MMLEIJ
+
+Gerakan 83: H - Bawah
+ AA..BB
+ ..DCC.
+ HFD.GG
+KHFPP.J
+ HFLEIJ
+ MMLEIJ
+
+Gerakan 84: I - Atas
+ AA..BB
+ ..DCC.
+ HFD.GG
+KHFPPIJ
+ HFLEIJ
+ MMLE.J
+
+Gerakan 85: C - Kanan
+ AA..BB
+ ..D.CC
+ HFD.GG
+KHFPPIJ
+ HFLEIJ
+ MMLE.J
+
+Gerakan 86: I - Bawah
+ AA..BB
+ ..D.CC
+ HFD.GG
+KHFPP.J
+ HFLEIJ
+ MMLEIJ
+
+Gerakan 87: H - Atas
+ AA..BB
+ H.D.CC
+ HFD.GG
+KHFPP.J
+ .FLEIJ
+ MMLEIJ
+
+Gerakan 88: A - Kanan
+ .AA.BB
+ H.D.CC
+ HFD.GG
+KHFPP.J
+ .FLEIJ
+ MMLEIJ
+
+Gerakan 89: I - Atas
+ .AA.BB
+ H.D.CC
+ HFD.GG
+KHFPPIJ
+ .FLEIJ
+ MMLE.J
+
+Gerakan 90: A - Kanan
+ ..AABB
+ H.D.CC
+ HFD.GG
+KHFPPIJ
+ .FLEIJ
+ MMLE.J
+
+Gerakan 91: F - Atas
+ ..AABB
+ HFD.CC
+ HFD.GG
+KHFPPIJ
+ ..LEIJ
+ MMLE.J
+
+Gerakan 92: F - Atas
+ .FAABB
+ HFD.CC
+ HFD.GG
+KH.PPIJ
+ ..LEIJ
+ MMLE.J
+
+Gerakan 93: P - Kiri
+ .FAABB
+ HFD.CC
+ HFD.GG
+KHPP.IJ
+ ..LEIJ
+ MMLE.J
+
+Gerakan 94: H - Atas
+ HFAABB
+ HFD.CC
+ HFD.GG
+K.PP.IJ
+ ..LEIJ
+ MMLE.J
+
+Gerakan 95: P - Kiri
+ HFAABB
+ HFD.CC
+ HFD.GG
+KPP..IJ
+ ..LEIJ
+ MMLE.J
+

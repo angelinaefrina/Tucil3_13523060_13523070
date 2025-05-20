@@ -1,0 +1,264 @@
+Papan awal: 
+.ABCCC
+.AB..D
+.APPEDK
+FF.GED
+...GHH
+......
+
+Gerakan 1: E - Atas
+.ABCCC
+.AB.ED
+.APPEDK
+FF.G.D
+...GHH
+......
+
+Gerakan 2: F - Kanan
+.ABCCC
+.AB.ED
+.APPEDK
+.FFG.D
+...GHH
+......
+
+Gerakan 3: G - Bawah
+.ABCCC
+.AB.ED
+.APPEDK
+.FF..D
+...GHH
+...G..
+
+Gerakan 4: F - Kanan
+.ABCCC
+.AB.ED
+.APPEDK
+..FF.D
+...GHH
+...G..
+
+Gerakan 5: A - Bawah
+..BCCC
+.AB.ED
+.APPEDK
+.AFF.D
+...GHH
+...G..
+
+Gerakan 6: A - Bawah
+..BCCC
+..B.ED
+.APPEDK
+.AFF.D
+.A.GHH
+...G..
+
+Gerakan 7: A - Bawah
+..BCCC
+..B.ED
+..PPEDK
+.AFF.D
+.A.GHH
+.A.G..
+
+Gerakan 8: P - Kiri
+..BCCC
+..B.ED
+.PP.EDK
+.AFF.D
+.A.GHH
+.A.G..
+
+Gerakan 9: P - Kiri
+..BCCC
+..B.ED
+PP..EDK
+.AFF.D
+.A.GHH
+.A.G..
+
+Gerakan 10: F - Kanan
+..BCCC
+..B.ED
+PP..EDK
+.A.FFD
+.A.GHH
+.A.G..
+
+Gerakan 11: B - Bawah
+...CCC
+..B.ED
+PPB.EDK
+.A.FFD
+.A.GHH
+.A.G..
+
+Gerakan 12: C - Kiri
+..CCC.
+..B.ED
+PPB.EDK
+.A.FFD
+.A.GHH
+.A.G..
+
+Gerakan 13: D - Atas
+..CCCD
+..B.ED
+PPB.EDK
+.A.FF.
+.A.GHH
+.A.G..
+
+Gerakan 14: F - Kanan
+..CCCD
+..B.ED
+PPB.EDK
+.A..FF
+.A.GHH
+.A.G..
+
+Gerakan 15: G - Atas
+..CCCD
+..B.ED
+PPB.EDK
+.A.GFF
+.A.GHH
+.A....
+
+Gerakan 16: G - Atas
+..CCCD
+..B.ED
+PPBGEDK
+.A.GFF
+.A..HH
+.A....
+
+Gerakan 17: G - Atas
+..CCCD
+..BGED
+PPBGEDK
+.A..FF
+.A..HH
+.A....
+
+Gerakan 18: B - Bawah
+..CCCD
+...GED
+PPBGEDK
+.AB.FF
+.A..HH
+.A....
+
+Gerakan 19: B - Bawah
+..CCCD
+...GED
+PP.GEDK
+.AB.FF
+.AB.HH
+.A....
+
+Gerakan 20: H - Kiri
+..CCCD
+...GED
+PP.GEDK
+.AB.FF
+.ABHH.
+.A....
+
+Gerakan 21: F - Kiri
+..CCCD
+...GED
+PP.GEDK
+.ABFF.
+.ABHH.
+.A....
+
+Gerakan 22: D - Bawah
+..CCC.
+...GED
+PP.GEDK
+.ABFFD
+.ABHH.
+.A....
+
+Gerakan 23: D - Bawah
+..CCC.
+...GE.
+PP.GEDK
+.ABFFD
+.ABHHD
+.A....
+
+Gerakan 24: D - Bawah
+..CCC.
+...GE.
+PP.GE.K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 25: C - Kiri
+.CCC..
+...GE.
+PP.GE.K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 26: C - Kiri
+CCC...
+...GE.
+PP.GE.K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 27: E - Atas
+CCC.E.
+...GE.
+PP.G..K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 28: G - Atas
+CCCGE.
+...GE.
+PP....K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 29: P - Kanan
+CCCGE.
+...GE.
+.PP...K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 30: P - Kanan
+CCCGE.
+...GE.
+..PP..K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 31: P - Kanan
+CCCGE.
+...GE.
+...PP.K
+.ABFFD
+.ABHHD
+.A...D
+
+Gerakan 32: P - Kanan
+CCCGE.
+...GE.
+....PPK
+.ABFFD
+.ABHHD
+.A...D
+

@@ -1,0 +1,224 @@
+Papan awal: 
+A...BB
+ACC...
+..D..E
+PPDF.EK
+GHHF.I
+GJJLLI
+
+Gerakan 1: C - Kanan
+A...BB
+A.CC..
+..D..E
+PPDF.EK
+GHHF.I
+GJJLLI
+
+Gerakan 2: C - Kanan
+A...BB
+A..CC.
+..D..E
+PPDF.EK
+GHHF.I
+GJJLLI
+
+Gerakan 3: C - Kanan
+A...BB
+A...CC
+..D..E
+PPDF.EK
+GHHF.I
+GJJLLI
+
+Gerakan 4: D - Atas
+A...BB
+A.D.CC
+..D..E
+PP.F.EK
+GHHF.I
+GJJLLI
+
+Gerakan 5: F - Atas
+A...BB
+A.D.CC
+..DF.E
+PP.F.EK
+GHH..I
+GJJLLI
+
+Gerakan 6: P - Kanan
+A...BB
+A.D.CC
+..DF.E
+.PPF.EK
+GHH..I
+GJJLLI
+
+Gerakan 7: G - Atas
+A...BB
+A.D.CC
+..DF.E
+GPPF.EK
+GHH..I
+.JJLLI
+
+Gerakan 8: F - Atas
+A...BB
+A.DFCC
+..DF.E
+GPP..EK
+GHH..I
+.JJLLI
+
+Gerakan 9: G - Atas
+A...BB
+A.DFCC
+G.DF.E
+GPP..EK
+.HH..I
+.JJLLI
+
+Gerakan 10: H - Kiri
+A...BB
+A.DFCC
+G.DF.E
+GPP..EK
+HH...I
+.JJLLI
+
+Gerakan 11: P - Kanan
+A...BB
+A.DFCC
+G.DF.E
+G.PP.EK
+HH...I
+.JJLLI
+
+Gerakan 12: P - Kanan
+A...BB
+A.DFCC
+G.DF.E
+G..PPEK
+HH...I
+.JJLLI
+
+Gerakan 13: D - Bawah
+A...BB
+A..FCC
+G.DF.E
+G.DPPEK
+HH...I
+.JJLLI
+
+Gerakan 14: J - Kiri
+A...BB
+A..FCC
+G.DF.E
+G.DPPEK
+HH...I
+JJ.LLI
+
+Gerakan 15: D - Bawah
+A...BB
+A..FCC
+G..F.E
+G.DPPEK
+HHD..I
+JJ.LLI
+
+Gerakan 16: D - Bawah
+A...BB
+A..FCC
+G..F.E
+G..PPEK
+HHD..I
+JJDLLI
+
+Gerakan 17: P - Kiri
+A...BB
+A..FCC
+G..F.E
+G.PP.EK
+HHD..I
+JJDLLI
+
+Gerakan 18: P - Kiri
+A...BB
+A..FCC
+G..F.E
+GPP..EK
+HHD..I
+JJDLLI
+
+Gerakan 19: F - Bawah
+A...BB
+A...CC
+G..F.E
+GPPF.EK
+HHD..I
+JJDLLI
+
+Gerakan 20: C - Kiri
+A...BB
+A..CC.
+G..F.E
+GPPF.EK
+HHD..I
+JJDLLI
+
+Gerakan 21: E - Atas
+A...BB
+A..CCE
+G..F.E
+GPPF..K
+HHD..I
+JJDLLI
+
+Gerakan 22: C - Kiri
+A...BB
+A.CC.E
+G..F.E
+GPPF..K
+HHD..I
+JJDLLI
+
+Gerakan 23: C - Kiri
+A...BB
+ACC..E
+G..F.E
+GPPF..K
+HHD..I
+JJDLLI
+
+Gerakan 24: F - Atas
+A...BB
+ACCF.E
+G..F.E
+GPP...K
+HHD..I
+JJDLLI
+
+Gerakan 25: P - Kanan
+A...BB
+ACCF.E
+G..F.E
+G.PP..K
+HHD..I
+JJDLLI
+
+Gerakan 26: P - Kanan
+A...BB
+ACCF.E
+G..F.E
+G..PP.K
+HHD..I
+JJDLLI
+
+Gerakan 27: P - Kanan
+A...BB
+ACCF.E
+G..F.E
+G...PPK
+HHD..I
+JJDLLI
+

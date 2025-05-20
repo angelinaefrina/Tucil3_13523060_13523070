@@ -1,0 +1,495 @@
+Papan awal: 
+IIGP..
+.JGP..
+.J.CC.
+.JEEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 1: C - Kanan
+IIGP..
+.JGP..
+.J..CC
+.JEEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 2: P - Bawah
+IIG...
+.JGP..
+.J.PCC
+.JEEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 3: G - Bawah
+II....
+.JGP..
+.JGPCC
+.JEEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 4: I - Kanan
+.II...
+.JGP..
+.JGPCC
+.JEEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 5: I - Kanan
+..II..
+.JGP..
+.JGPCC
+.JEEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 6: J - Atas
+.JII..
+.JGP..
+.JGPCC
+..EEAA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 7: E - Kiri
+.JII..
+.JGP..
+.JGPCC
+.EE.AA
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 8: A - Kiri
+.JII..
+.JGP..
+.JGPCC
+.EEAA.
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 9: I - Kanan
+.J.II.
+.JGP..
+.JGPCC
+.EEAA.
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 10: I - Kanan
+.J..II
+.JGP..
+.JGPCC
+.EEAA.
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 11: P - Atas
+.J.PII
+.JGP..
+.JG.CC
+.EEAA.
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 12: C - Kiri
+.J.PII
+.JGP..
+.JGCC.
+.EEAA.
+.FFF.B
+.HHDDB
+   K  
+
+Gerakan 13: B - Atas
+.J.PII
+.JGP..
+.JGCC.
+.EEAAB
+.FFF.B
+.HHDD.
+   K  
+
+Gerakan 14: B - Atas
+.J.PII
+.JGP..
+.JGCCB
+.EEAAB
+.FFF..
+.HHDD.
+   K  
+
+Gerakan 15: B - Atas
+.J.PII
+.JGP.B
+.JGCCB
+.EEAA.
+.FFF..
+.HHDD.
+   K  
+
+Gerakan 16: A - Kanan
+.J.PII
+.JGP.B
+.JGCCB
+.EE.AA
+.FFF..
+.HHDD.
+   K  
+
+Gerakan 17: E - Kanan
+.J.PII
+.JGP.B
+.JGCCB
+..EEAA
+.FFF..
+.HHDD.
+   K  
+
+Gerakan 18: F - Kanan
+.J.PII
+.JGP.B
+.JGCCB
+..EEAA
+..FFF.
+.HHDD.
+   K  
+
+Gerakan 19: G - Atas
+.JGPII
+.JGP.B
+.J.CCB
+..EEAA
+..FFF.
+.HHDD.
+   K  
+
+Gerakan 20: J - Bawah
+..GPII
+.JGP.B
+.J.CCB
+.JEEAA
+..FFF.
+.HHDD.
+   K  
+
+Gerakan 21: J - Bawah
+..GPII
+..GP.B
+.J.CCB
+.JEEAA
+.JFFF.
+.HHDD.
+   K  
+
+Gerakan 22: C - Kiri
+..GPII
+..GP.B
+.JCC.B
+.JEEAA
+.JFFF.
+.HHDD.
+   K  
+
+Gerakan 23: D - Kanan
+..GPII
+..GP.B
+.JCC.B
+.JEEAA
+.JFFF.
+.HH.DD
+   K  
+
+Gerakan 24: H - Kanan
+..GPII
+..GP.B
+.JCC.B
+.JEEAA
+.JFFF.
+..HHDD
+   K  
+
+Gerakan 25: J - Bawah
+..GPII
+..GP.B
+..CC.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 26: C - Kiri
+..GPII
+..GP.B
+.CC..B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 27: C - Kiri
+..GPII
+..GP.B
+CC...B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 28: P - Bawah
+..G.II
+..GP.B
+CC.P.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 29: I - Kiri
+..GII.
+..GP.B
+CC.P.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 30: G - Bawah
+...II.
+..GP.B
+CCGP.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 31: I - Kiri
+..II..
+..GP.B
+CCGP.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 32: I - Kiri
+.II...
+..GP.B
+CCGP.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 33: P - Atas
+.IIP..
+..GP.B
+CCG..B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 34: I - Kiri
+II.P..
+..GP.B
+CCG..B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 35: G - Atas
+IIGP..
+..GP.B
+CC...B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 36: C - Kanan
+IIGP..
+..GP.B
+.CC..B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 37: C - Kanan
+IIGP..
+..GP.B
+..CC.B
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 38: C - Kanan
+IIGP..
+..GP.B
+...CCB
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 39: G - Bawah
+II.P..
+..GP.B
+..GCCB
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 40: B - Atas
+II.P.B
+..GP.B
+..GCC.
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 41: C - Kanan
+II.P.B
+..GP.B
+..G.CC
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 42: P - Bawah
+II...B
+..GP.B
+..GPCC
+.JEEAA
+.JFFF.
+.JHHDD
+   K  
+
+Gerakan 43: J - Atas
+II...B
+..GP.B
+.JGPCC
+.JEEAA
+.JFFF.
+..HHDD
+   K  
+
+Gerakan 44: I - Kanan
+.II..B
+..GP.B
+.JGPCC
+.JEEAA
+.JFFF.
+..HHDD
+   K  
+
+Gerakan 45: J - Atas
+.II..B
+.JGP.B
+.JGPCC
+.JEEAA
+..FFF.
+..HHDD
+   K  
+
+Gerakan 46: F - Kiri
+.II..B
+.JGP.B
+.JGPCC
+.JEEAA
+.FFF..
+..HHDD
+   K  
+
+Gerakan 47: I - Kanan
+..II.B
+.JGP.B
+.JGPCC
+.JEEAA
+.FFF..
+..HHDD
+   K  
+
+Gerakan 48: J - Atas
+.JII.B
+.JGP.B
+.JGPCC
+..EEAA
+.FFF..
+..HHDD
+   K  
+
+Gerakan 49: E - Kiri
+.JII.B
+.JGP.B
+.JGPCC
+.EE.AA
+.FFF..
+..HHDD
+   K  
+
+Gerakan 50: H - Kiri
+.JII.B
+.JGP.B
+.JGPCC
+.EE.AA
+.FFF..
+.HH.DD
+   K  
+
+Gerakan 51: F - Kiri
+.JII.B
+.JGP.B
+.JGPCC
+.EE.AA
+FFF...
+.HH.DD
+   K  
+
+Gerakan 52: P - Bawah
+.JII.B
+.JG..B
+.JGPCC
+.EEPAA
+FFF...
+.HH.DD
+   K  
+
+Gerakan 53: P - Bawah
+.JII.B
+.JG..B
+.JG.CC
+.EEPAA
+FFFP..
+.HH.DD
+   K  
+
+Gerakan 54: P - Bawah
+.JII.B
+.JG..B
+.JG.CC
+.EE.AA
+FFFP..
+.HHPDD
+   K  
+

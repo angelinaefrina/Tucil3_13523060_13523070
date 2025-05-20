@@ -1,8 +1,8 @@
-5 5
-3
-  K
-C....
-C....
-CBBA.
-C.PA.
-..P..
+6 6
+12
+ .AABB.
+ CCDE..
+ .FDEGG
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ

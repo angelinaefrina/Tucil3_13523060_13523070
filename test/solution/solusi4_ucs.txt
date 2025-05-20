@@ -1,0 +1,424 @@
+Papan awal: 
+ .AABB.
+ CCDE..
+ .FDEGG
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 1: B - Kanan
+ .AA.BB
+ CCDE..
+ .FDEGG
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 2: E - Atas
+ .AAEBB
+ CCDE..
+ .FD.GG
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 3: G - Kiri
+ .AAEBB
+ CCDE..
+ .FDGG.
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 4: A - Kiri
+ AA.EBB
+ CCDE..
+ .FDGG.
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 5: D - Atas
+ AADEBB
+ CCDE..
+ .F.GG.
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 6: G - Kiri
+ AADEBB
+ CCDE..
+ .FGG..
+KHFPPIJ
+ HFL.IJ
+ H.LMMJ
+
+Gerakan 7: F - Bawah
+ AADEBB
+ CCDE..
+ ..GG..
+KHFPPIJ
+ HFL.IJ
+ HFLMMJ
+
+Gerakan 8: G - Kiri
+ AADEBB
+ CCDE..
+ .GG...
+KHFPPIJ
+ HFL.IJ
+ HFLMMJ
+
+Gerakan 9: E - Bawah
+ AAD.BB
+ CCDE..
+ .GGE..
+KHFPPIJ
+ HFL.IJ
+ HFLMMJ
+
+Gerakan 10: B - Kiri
+ AADBB.
+ CCDE..
+ .GGE..
+KHFPPIJ
+ HFL.IJ
+ HFLMMJ
+
+Gerakan 11: I - Atas
+ AADBB.
+ CCDE..
+ .GGEI.
+KHFPPIJ
+ HFL..J
+ HFLMMJ
+
+Gerakan 12: I - Atas
+ AADBB.
+ CCDEI.
+ .GGEI.
+KHFPP.J
+ HFL..J
+ HFLMMJ
+
+Gerakan 13: J - Atas
+ AADBB.
+ CCDEI.
+ .GGEIJ
+KHFPP.J
+ HFL..J
+ HFLMM.
+
+Gerakan 14: P - Kanan
+ AADBB.
+ CCDEI.
+ .GGEIJ
+KHF.PPJ
+ HFL..J
+ HFLMM.
+
+Gerakan 15: J - Atas
+ AADBB.
+ CCDEIJ
+ .GGEIJ
+KHF.PPJ
+ HFL...
+ HFLMM.
+
+Gerakan 16: J - Atas
+ AADBBJ
+ CCDEIJ
+ .GGEIJ
+KHF.PP.
+ HFL...
+ HFLMM.
+
+Gerakan 17: P - Kanan
+ AADBBJ
+ CCDEIJ
+ .GGEIJ
+KHF..PP
+ HFL...
+ HFLMM.
+
+Gerakan 18: E - Bawah
+ AADBBJ
+ CCD.IJ
+ .GGEIJ
+KHF.EPP
+ HFL...
+ HFLMM.
+
+Gerakan 19: E - Bawah
+ AADBBJ
+ CCD.IJ
+ .GG.IJ
+KHF.EPP
+ HFLE..
+ HFLMM.
+
+Gerakan 20: L - Atas
+ AADBBJ
+ CCD.IJ
+ .GG.IJ
+KHFLEPP
+ HFLE..
+ HF.MM.
+
+Gerakan 21: H - Atas
+ AADBBJ
+ CCD.IJ
+ HGG.IJ
+KHFLEPP
+ HFLE..
+ .F.MM.
+
+Gerakan 22: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HGG.IJ
+KHFLEPP
+ HFLE..
+ .FMM..
+
+Gerakan 23: G - Kanan
+ AADBBJ
+ CCD.IJ
+ H.GGIJ
+KHFLEPP
+ HFLE..
+ .FMM..
+
+Gerakan 24: F - Atas
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ ..MM..
+
+Gerakan 25: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ .MM...
+
+Gerakan 26: M - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFLEPP
+ HFLE..
+ MM....
+
+Gerakan 27: L - Bawah
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHF.EPP
+ HFLE..
+ MML...
+
+Gerakan 28: E - Bawah
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHF..PP
+ HFLE..
+ MMLE..
+
+Gerakan 29: P - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHF.PP.
+ HFLE..
+ MMLE..
+
+Gerakan 30: P - Kiri
+ AADBBJ
+ CCD.IJ
+ HFGGIJ
+KHFPP..
+ HFLE..
+ MMLE..
+
+Gerakan 31: I - Bawah
+ AADBBJ
+ CCD..J
+ HFGGIJ
+KHFPPI.
+ HFLE..
+ MMLE..
+
+Gerakan 32: I - Bawah
+ AADBBJ
+ CCD..J
+ HFGG.J
+KHFPPI.
+ HFLEI.
+ MMLE..
+
+Gerakan 33: G - Kanan
+ AADBBJ
+ CCD..J
+ HF.GGJ
+KHFPPI.
+ HFLEI.
+ MMLE..
+
+Gerakan 34: I - Bawah
+ AADBBJ
+ CCD..J
+ HF.GGJ
+KHFPP..
+ HFLEI.
+ MMLEI.
+
+Gerakan 35: P - Kanan
+ AADBBJ
+ CCD..J
+ HF.GGJ
+KHF.PP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 36: D - Bawah
+ AA.BBJ
+ CCD..J
+ HFDGGJ
+KHF.PP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 37: D - Bawah
+ AA.BBJ
+ CC...J
+ HFDGGJ
+KHFDPP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 38: A - Kanan
+ .AABBJ
+ CC...J
+ HFDGGJ
+KHFDPP.
+ HFLEI.
+ MMLEI.
+
+Gerakan 39: J - Bawah
+ .AABB.
+ CC...J
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 40: B - Kanan
+ .AA.BB
+ CC...J
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 41: C - Kanan
+ .AA.BB
+ .CC..J
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 42: C - Kanan
+ .AA.BB
+ ..CC.J
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 43: C - Kanan
+ .AA.BB
+ ...CCJ
+ HFDGGJ
+KHFDPPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 44: D - Atas
+ .AA.BB
+ ..DCCJ
+ HFDGGJ
+KHF.PPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 45: A - Kanan
+ ..AABB
+ ..DCCJ
+ HFDGGJ
+KHF.PPJ
+ HFLEI.
+ MMLEI.
+
+Gerakan 46: F - Atas
+ ..AABB
+ .FDCCJ
+ HFDGGJ
+KHF.PPJ
+ H.LEI.
+ MMLEI.
+
+Gerakan 47: P - Kiri
+ ..AABB
+ .FDCCJ
+ HFDGGJ
+KHFPP.J
+ H.LEI.
+ MMLEI.
+
+Gerakan 48: F - Atas
+ .FAABB
+ .FDCCJ
+ HFDGGJ
+KH.PP.J
+ H.LEI.
+ MMLEI.
+
+Gerakan 49: P - Kiri
+ .FAABB
+ .FDCCJ
+ HFDGGJ
+KHPP..J
+ H.LEI.
+ MMLEI.
+
+Gerakan 50: H - Atas
+ .FAABB
+ HFDCCJ
+ HFDGGJ
+KHPP..J
+ ..LEI.
+ MMLEI.
+
+Gerakan 51: H - Atas
+ HFAABB
+ HFDCCJ
+ HFDGGJ
+K.PP..J
+ ..LEI.
+ MMLEI.
+
+Gerakan 52: P - Kiri
+ HFAABB
+ HFDCCJ
+ HFDGGJ
+KPP...J
+ ..LEI.
+ MMLEI.
+
